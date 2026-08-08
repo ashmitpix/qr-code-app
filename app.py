@@ -41,12 +41,20 @@ if st.button("Generate QR Code"):
         )
     else:
         st.warning("Enter valid url boy")
-# Hide Streamlit's default menu and footer
+# Hide Streamlit's default menu, footer, and the floating viewer badge
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
+            
+            /* Hack to hide the floating "Hosted with Streamlit" badge */
+            .viewerBadge_container__1QSob,
+            .styles_viewerBadge__1yB5_,
+            .viewerBadge_link__1S137,
+            .viewerBadge_text__1JaDK { 
+                display: none !important; 
+            }
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
